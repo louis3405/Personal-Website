@@ -1,0 +1,124 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>My Tree Species Map</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Leaflet CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <!-- Leaflet JavaScript-->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+
+
+<meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="css/cover.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Louis' Personal Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+    </div>
+  </nav>
+</header>
+    <div class = "content-Header">
+    <h1>Louis' NCHU Tree Map</h1>
+  </div>
+  <div class = "content-content">
+    <h4>This is the web map that shows the tree species in NCHU. Enjoy!</h4>
+    
+    <h5>Flowering plants? 開花植物？<button type="button" onclick="showFloweringPlants()" style="margin:5px 2px;" >Click me!</button></h5>
+    <table style="width: 1024px; text-align: center;">
+      <tr> 
+        <th colspan="6">裸子植物 / 被子植物</th>
+      </tr>
+      <tr>
+        <td colspan="3"><input type="checkbox" id="checkbox1" name="checkbox1" onclick="checkFlower(this, '裸子植物 Gymnosperm');" >裸子植物</th>
+        <td colspan="3"><input type="checkbox" id="checkbox1" name="checkbox1" onclick="checkFlower(this, '被子植物 Angiosperms');">被子植物</th>
+      </tr>
+      <tr>
+        <th colspan="6">科名</th>
+      </tr>
+      <tr>
+        <td colspan="1" style="width: 16.6666%;">杉科</th>
+        <td colspan="1" style="width: 16.6666%;">松科</th>
+        <td colspan="1" style="width: 16.6666%;">木蘭科</th>
+        <td colspan="1" style="width: 16.6666%;">芭蕉科</th>
+        <td colspan="1" style="width: 16.6666%;">樟科</th>
+        <td colspan="1" style="width: 16.6666%;">殼斗科</th>
+      </tr>
+      <tr>
+        <td colspan="1" style="width: 16.6666%;">杉科</th>
+        <td colspan="1" style="width: 16.6666%;">松科</th>
+        <td colspan="1" style="width: 16.6666%;">木蘭科</th>
+        <td colspan="1" style="width: 16.6666%;">芭蕉科</th>
+        <td colspan="1" style="width: 16.6666%;">樟科</th>
+        <td colspan="1" style="width: 16.6666%;">殼斗科</th>
+      </tr>
+
+    </table>
+  </div>
+  <div id="mapid"></div>
+  <script>
+    var mymap = L.map('mapid').setView([24.124366, 120.6785757], 16);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibG91aXMzNDA1IiwiYSI6ImNrY3duZ3JnaDBmdWwycWtkdWVja3h4bnQifQ.MEcSWWH2kKRPUaJ5IjXcfQ', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoibG91aXMzNDA1IiwiYSI6ImNrY3duZ3JnaDBmdWwycWtkdWVja3h4bnQifQ.MEcSWWH2kKRPUaJ5IjXcfQ'
+    }).addTo(mymap);
+  </script>
+
+    <!--JS-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="geojson.js"></script>
+    </body>
+</html>

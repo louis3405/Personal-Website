@@ -1,0 +1,17 @@
+.content-Header{
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.content-content{
+    margin-top: 0px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+#mapid { 
+    margin-left: 100px;
+    margin-right:100px;
+    height: 768px;
+    width: 1024px;
+ }
