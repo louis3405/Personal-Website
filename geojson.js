@@ -355,6 +355,25 @@ var points = {
           24.12149883850283
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "雙扇蕨",
+        "image": "images/雙扇蕨.JPG",
+        "hardsoft": "蕨類 Fern",
+        "family": "雙扇蕨科 Dipteridaceae"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.618119,
+          24.966852
+        ]
+      }
     }
   ]
 }
