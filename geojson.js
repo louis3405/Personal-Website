@@ -429,7 +429,7 @@ function query(checkboxName) {
       if (plantQuery.length == 0) {
         return true;
       }
-      console.log(plantQuery.length);
+      console.log(property);
       for (i=0;i<plantQuery.length;i++){
         if (property == plantQuery[i]) {
           return true;
