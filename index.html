@@ -72,27 +72,31 @@
     <h4>This is the web map that shows the tree species in NCHU. Enjoy!</h4>
     
     <h5>Flowering plants? 開花植物？<button type="button" onclick="showFloweringPlants()" style="margin:5px 2px;" >Click me!</button></h5>
-    <table style="width: 1024px; text-align: center;">
+    <table style="width: 1024px; text-align: center;" id="filter-table">
       <tr> 
-        <th colspan="6">裸子植物 / 被子植物</th>
+        <th colspan="6">
+          <input type = "radio" id="filter-selection-flowering" name="filter-selection" value="flowering" onclick="checkSelectOption(this.id);"checked> 裸子植物 / 被子植物
+        </th>
       </tr>
       <tr>
-        <td colspan="3"><input type="checkbox" id="checkbox1" name="checkbox1" onclick="checkFlower(this, '裸子植物 Gymnosperm');" >裸子植物</th>
-        <td colspan="3"><input type="checkbox" id="checkbox1" name="checkbox1" onclick="checkFlower(this, '被子植物 Angiosperms');">被子植物</th>
+        <td colspan="3"><input type="checkbox" id="checkbox-flowering1" name="checkbox-flowering" onclick="checkFlower(this, '裸子植物 Gymnosperm');" > 裸子植物</th>
+        <td colspan="3"><input type="checkbox" id="checkbox-flowering2" name="checkbox-flowering" onclick="checkFlower(this, '被子植物 Angiosperms');"> 被子植物</th>
       </tr>
       <tr>
-        <th colspan="6">科名</th>
+        <th colspan="6">
+          <input type="radio" id="filter-selection-family" name="filter-selection" value="family" onclick="checkSelectOption(this.id);"> 科名
+        </th>
       </tr>
       <tr>
-        <td colspan="1" style="width: 16.6666%;">杉科</th>
-        <td colspan="1" style="width: 16.6666%;">松科</th>
-        <td colspan="1" style="width: 16.6666%;">木蘭科</th>
-        <td colspan="1" style="width: 16.6666%;">芭蕉科</th>
-        <td colspan="1" style="width: 16.6666%;">樟科</th>
-        <td colspan="1" style="width: 16.6666%;">殼斗科</th>
+        <td colspan="1"><input type="checkbox" id="checkbox-family1" name="checkbox-family" disabled> 杉科</th>
+        <td colspan="1"><input type="checkbox" id="checkbox-family2" name="checkbox-family" disabled> 松科</th>
+        <td colspan="1"><input type="checkbox" id="checkbox-family3" name="checkbox-family" disabled> 木蘭科</th>
+        <td colspan="1"><input type="checkbox" id="checkbox-family4" name="checkbox-family" disabled> 芭蕉科</th>
+        <td colspan="1"><input type="checkbox" id="checkbox-family5" name="checkbox-family" disabled> 樟科</th>
+        <td colspan="1"><input type="checkbox" id="checkbox-family6" name="checkbox-family" disabled> 殼斗科</th>
       </tr>
       <tr>
-        <td colspan="1" style="width: 16.6666%;">杉科</th>
+        <td colspan="1" style="width: 16.6666%;">杉科</th> 
         <td colspan="1" style="width: 16.6666%;">松科</th>
         <td colspan="1" style="width: 16.6666%;">木蘭科</th>
         <td colspan="1" style="width: 16.6666%;">芭蕉科</th>

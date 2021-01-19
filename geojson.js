@@ -424,3 +424,22 @@ function checkFlower(checkbox, value) {
   }
   query();
 }
+
+function checkSelectOption(id) {
+  var allCheckboxes = document.getElementById("filter-table").querySelectorAll("input[type='checkbox']")
+  for (i=0;i<allCheckboxes.length;i++){
+    allCheckboxes[i].disabled = true;
+    allCheckboxes[i].checked = false;
+  }
+  if (id == "filter-selection-flowering") {
+    var checkBoxes = document.getElementsByName("checkbox-flowering")
+    for (i=0;i<checkBoxes.length;i++){
+      checkBoxes[i].disabled = false;
+    }
+  } else if (id == "filter-selection-family") {
+    var checkBoxes = document.getElementsByName("checkbox-family")
+    for (i=0;i<checkBoxes.length;i++){
+      checkBoxes[i].disabled = false;
+    }
+  }
+}
