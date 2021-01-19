@@ -363,7 +363,7 @@ var points = {
         "marker-size": "medium",
         "marker-symbol": "",
         "name": "雙扇蕨",
-        "image": "images/Dipteris conjugata.JPG",
+        "image": "https://github.com/louis3405/Personal-Website/blob/main/images/Dipteris%20conjugata.jpg",
         "hardsoft": "蕨類 Fern",
         "family": "雙扇蕨科 Dipteridaceae"
       },
