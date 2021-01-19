@@ -79,8 +79,8 @@
         </th>
       </tr>
       <tr>
-        <td colspan="3"><input type="checkbox" id="checkbox-flowering1" name="checkbox-flowering" onclick="checkFlower(this, '裸子植物 Gymnosperm');" > 裸子植物</th>
-        <td colspan="3"><input type="checkbox" id="checkbox-flowering2" name="checkbox-flowering" onclick="checkFlower(this, '被子植物 Angiosperms');"> 被子植物</th>
+        <td colspan="3"><input type="checkbox" id="checkbox-flowering1" name="checkbox-flowering" onclick="checkFlower(this, this.attributes['name'].value, '裸子植物 Gymnosperm');" > 裸子植物</th>
+        <td colspan="3"><input type="checkbox" id="checkbox-flowering2" name="checkbox-flowering" onclick="checkFlower(this, this.attributes['name'].value, '被子植物 Angiosperms');"> 被子植物</th>
       </tr>
       <tr>
         <th colspan="6">
@@ -88,13 +88,14 @@
         </th>
       </tr>
       <tr>
-        <td colspan="1"><input type="checkbox" id="checkbox-family1" name="checkbox-family" disabled> 杉科</th>
-        <td colspan="1"><input type="checkbox" id="checkbox-family2" name="checkbox-family" disabled> 松科</th>
-        <td colspan="1"><input type="checkbox" id="checkbox-family3" name="checkbox-family" disabled> 木蘭科</th>
-        <td colspan="1"><input type="checkbox" id="checkbox-family4" name="checkbox-family" disabled> 芭蕉科</th>
-        <td colspan="1"><input type="checkbox" id="checkbox-family5" name="checkbox-family" disabled> 樟科</th>
-        <td colspan="1"><input type="checkbox" id="checkbox-family6" name="checkbox-family" disabled> 殼斗科</th>
+        <td colspan="1"><input type="checkbox" id="checkbox-family1" name="checkbox-family" onclick="checkFlower(this, this.attributes['name'].value, '杉科 Cupressaceae');" disabled> 杉科</th>
+        <td colspan="1"><input type="checkbox" id="checkbox-family2" name="checkbox-family" onclick="checkFlower(this, this.attributes['name'].value, '棕梠科 Arecaceae');" disabled> 棕梠科</th>
+        <td colspan="1"><input type="checkbox" id="checkbox-family3" name="checkbox-family" onclick="checkFlower(this, this.attributes['name'].value, '木蘭科 Magnoliaceae');" disabled> 木蘭科</th>
+        <td colspan="1"><input type="checkbox" id="checkbox-family4" name="checkbox-family" onclick="checkFlower(this, this.attributes['name'].value, '芭蕉科 Musaceae');" disabled> 芭蕉科</th>
+        <td colspan="1"><input type="checkbox" id="checkbox-family5" name="checkbox-family" onclick="checkFlower(this, this.attributes['name'].value, '樟科 Lauraceae');" disabled> 樟科</th>
+        <td colspan="1"><input type="checkbox" id="checkbox-family6" name="checkbox-family" onclick="checkFlower(this, this.attributes['name'].value, '第倫桃科 Dilleniaceae');" disabled> 第倫桃科</th>
       </tr>
+      <!--
       <tr>
         <td colspan="1" style="width: 16.6666%;">杉科</th> 
         <td colspan="1" style="width: 16.6666%;">松科</th>
@@ -102,7 +103,7 @@
         <td colspan="1" style="width: 16.6666%;">芭蕉科</th>
         <td colspan="1" style="width: 16.6666%;">樟科</th>
         <td colspan="1" style="width: 16.6666%;">殼斗科</th>
-      </tr>
+      </tr> -->
 
     </table>
   </div>

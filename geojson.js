@@ -391,7 +391,7 @@ function showFloweringPlants() {
 
 var plantQuery = []
 
-function query() {
+function query(checkboxName) {
   mymap.removeLayer(myLayer);
   myLayer = L.geoJSON(points,{
     onEachFeature: function (feature,layer) {
@@ -402,12 +402,17 @@ function query() {
       " </div>").openPopup();
     },
     filter: function (feature) {
+      if (checkboxName == "checkbox-flowering"){
+        var property = feature.properties.hardsoft
+      } else if (checkboxName == "checkbox-family") {
+        var property = feature.properties.family
+      }
       if (plantQuery.length == 0) {
         return true;
       }
       console.log(plantQuery.length);
       for (i=0;i<plantQuery.length;i++){
-        if (feature.properties.hardsoft == plantQuery[i]) {
+        if (property == plantQuery[i]) {
           return true;
         }
       }
@@ -416,13 +421,13 @@ function query() {
   }).addTo(mymap);
 }
 
-function checkFlower(checkbox, value) {
+function checkFlower(checkbox, checkboxName,value) {
   if (checkbox.checked) {
     plantQuery.push(value);
   } else {
     plantQuery.pop(value);
   }
-  query();
+  query(checkboxName);
 }
 
 function checkSelectOption(id) {
@@ -431,6 +436,7 @@ function checkSelectOption(id) {
     allCheckboxes[i].disabled = true;
     allCheckboxes[i].checked = false;
   }
+  plantQuery = []
   if (id == "filter-selection-flowering") {
     var checkBoxes = document.getElementsByName("checkbox-flowering")
     for (i=0;i<checkBoxes.length;i++){
