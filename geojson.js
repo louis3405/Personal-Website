@@ -317,6 +317,25 @@ var points = {
           24.965594
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "漢氏山葡萄",
+        "image": "images/漢氏山葡萄.jpg",
+        "hardsoft": "被子植物 Angiosperms",
+        "family": "葡萄科 Vitaveae"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.592444,
+          25.078294
+        ]
+      }
     }
   ]
 }
@@ -331,7 +350,21 @@ var myLayer = L.geoJSON(points,{
     " </div>").openPopup();
   }
 }).addTo(mymap);
-//myLayer.addData(points);
+
+// show all points function
+function showAll() {
+  mymap.removeLayer(myLayer);
+  myLayer = L.geoJSON(points,{
+    onEachFeature: function (feature,layer) {
+      layer.bindPopup("<div id=\"popupImgBox\"style=\"width: 280px; height: 350px; position: relative;   \">"+ feature.properties.name+ 
+      "<p style=\"margin: 0;\">image:</p>"+
+      "<p style=\"margin: 0;\">"+feature.properties.hardsoft+"</p>"+
+      " <img src=\""+ feature.properties.image+"\" style=\" height: auto; width: 100%; max-height: 300px; max-width: 100% \">"+
+      " </div>").openPopup();
+    }
+  }).addTo(mymap);
+}
+
 
 function showFloweringPlants() {
   mymap.removeLayer(myLayer);
@@ -393,6 +426,7 @@ function checkFlower(checkbox, checkboxName,value) {
 }
 
 function checkSelectOption(id) {
+  showAll()
   var allCheckboxes = document.getElementById("filter-table").querySelectorAll("input[type='checkbox']")
   for (i=0;i<allCheckboxes.length;i++){
     allCheckboxes[i].disabled = true;
