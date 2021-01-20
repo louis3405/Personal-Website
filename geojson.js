@@ -1,79 +1,3 @@
-/*
-var points = {
-    "type": "FeatureCollection",
-    "features": [
-      {
-        "type": "Feature",
-        "properties": {
-          "marker-color": "#7e7e7e",
-          "marker-size": "medium",
-          "marker-symbol": "",
-          "name": "阿勃勒",
-          "image": "images/GoldenShowerTree.JPG"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            120.67973971366882,
-            24.12386480952657
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "marker-color": "#7e7e7e",
-          "marker-size": "medium",
-          "marker-symbol": "",
-          "name": "Grinnell Glacier",
-          "image": ""
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            246.27081871032715,
-            48.76037588826086
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "marker-color": "#7e7e7e",
-          "marker-size": "medium",
-          "marker-symbol": "",
-          "name": "Many Glacier",
-          "image": ""
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            246.34283065795898,
-            48.798284598317906
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "marker-color": "#7e7e7e",
-          "marker-size": "medium",
-          "marker-symbol": "",
-          "name": "Fossil Beach",
-          "Image": ""
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            283.1444174051285,
-            38.16722890989125
-          ]
-        }
-      }
-    ]
-  }
-*/
-
 var points = {
   "type": "FeatureCollection",
   "features": [
@@ -363,7 +287,7 @@ var points = {
         "marker-size": "medium",
         "marker-symbol": "",
         "name": "雙扇蕨",
-        "image": "images/Dipteris conjugata.JPG",
+        "image": "images/Dipteris conjugata.jpg",
         "hardsoft": "蕨類 Fern",
         "family": "雙扇蕨科 Dipteridaceae"
       },
@@ -372,6 +296,25 @@ var points = {
         "coordinates": [
           121.618119,
           24.966852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "台灣斑鳩菊",
+        "image": "images/台灣斑鳩菊.jpg",
+        "hardsoft": "被子植物 Angiosperms",
+        "family": "菊科 Asteraceae"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.612381,
+          24.965594
         ]
       }
     }
