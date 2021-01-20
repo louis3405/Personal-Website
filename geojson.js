@@ -173,7 +173,7 @@ var points = {
         "marker-size": "medium",
         "marker-symbol": "",
         "name": "藍花楹",
-        "image": "images/藍花楹.JPG",
+        "image": "images/藍花楹.jpg",
         "hardsoft": "被子植物 Angiosperms",
         "family": "紫葳科 Bignoniaceae"
       },
@@ -192,7 +192,7 @@ var points = {
         "marker-size": "medium",
         "marker-symbol": "",
         "name": "澳洲檫樹",
-        "image": "images/澳洲檫樹.JPG",
+        "image": "images/澳洲檫樹.jpg",
         "hardsoft": "被子植物 Angiosperms",
         "family": ""
       },
